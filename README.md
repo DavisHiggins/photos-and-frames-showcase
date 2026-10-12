@@ -1,12 +1,15 @@
 <p align="center">
-  <a href="https://photos.davishiggins.com"><img src="assets/hero.gif" width="100%" alt="photos & frames — creation and expression through motion. Decorative animated cover: the p&f mark and title beside a marina sunset photo that shifts from black and white to color as crop corners tighten around it." /></a>
+  <a href="https://photos.davishiggins.com"><img src="assets/hero.svg" width="100%" alt="photos &amp; frames: creation and expression through motion. Animated cover with the p&amp;f mark and title beside a viewfinder where each landscape reveals its color as crop corners tighten, next to a black-and-white film strip." /></a>
 </p>
 
 <h1 align="center">photos &amp; frames</h1>
 
+<p align="center"><strong>My photography portfolio: galleries shown in black and white until you reach for them, plus editing, curation, and gallery services.</strong></p>
+
 <p align="center">
-  <strong>My photography portfolio: galleries shown in black and white until you reach for them, plus editing, curation, and gallery services.</strong><br />
-  <a href="https://photos.davishiggins.com"><strong>View the gallery ↗</strong></a> · <a href="https://www.higginsd.com/work/photos-and-frames">Case study</a> · <a href="https://davishiggins.com">Davis Higgins</a>
+  <a href="https://photos.davishiggins.com"><img src="assets/btn-open.svg" height="44" alt="View the gallery" /></a>&nbsp;
+  <a href="https://www.higginsd.com/work/photos-and-frames"><img src="assets/btn-case.svg" height="44" alt="Case study" /></a>&nbsp;
+  <a href="https://davishiggins.com"><img src="assets/btn-dh.svg" height="44" alt="Davis Higgins" /></a>
 </p>
 
 <p align="center"><sub>Live · Photography, design, and build by Davis Higgins</sub></p>
@@ -23,13 +26,13 @@
 
 ## What it does
 
-- **Color is earned.** Every photo shows in black and white by default and reveals its real color on hover, focus, or touch, so the eye reads composition first and color second.
+- **Color is earned.** Every photo appears in black and white and reveals its real color on hover, focus, or touch, so the eye reads composition first and color second.
 - **One collection at a time.** The gallery is split into portraits, nature, and couples. Each collection shows its frame count and opens into a full-screen lightbox with keyboard navigation.
 - **More than a portfolio.** A services page covers photo editing, portfolio websites, custom galleries, and visual curation, with a contact route for inquiries.
 
 ## Why I built it
 
-I wanted a home for my photography that felt like an exhibition, not a feed. The site uses a single visual rule: monochrome first, color on intent. Lowercase type and quiet chrome stay out of the pictures' way.
+I wanted a home for my photography that feels like an exhibition, not a feed. The site follows one visual rule, monochrome first and color on intent, with lowercase type and quiet chrome that stay out of the pictures' way.
 
 ## What I built
 
@@ -38,27 +41,29 @@ I took the photographs and designed and built the site:
 - The black-and-white-to-color interaction, working with a mouse, the keyboard, and touch
 - Collection-based gallery browsing with a lightbox
 - An animated homepage composition, smooth scrolling, and page motion
-- A photo processing script that converts HEIC, JPEG, and PNG originals into resized web images and thumbnails
+- The workflow that prepares every original photo for the web
 - The services and contact pages
 
-## How it's put together
+<details>
+<summary><strong>How it's put together</strong></summary>
+
+<br />
 
 ```mermaid
 flowchart TB
-    R[Original photos<br/>HEIC · JPEG · PNG] --> S[Processing script<br/>convert, resize, thumbnail]
-    S --> D[Photo data<br/>title · collection · alt text]
-    D --> G[Gallery: one collection at a time]
+    R[Original photos] --> S[Web-ready images]
+    S --> G[Gallery: one collection at a time]
     G --> C[Monochrome card<br/>color on hover, focus, or touch]
-    C --> L[Lightbox<br/>arrow keys · Escape]
+    C --> L[Full-screen lightbox]
 ```
-
-### Engineering decisions
 
 | Decision | Why |
 |---|---|
-| **The reveal works without a mouse** | Color isn't hover-only. Cards respond to keyboard focus and to a tap on touch screens, so the core interaction works for everyone. |
-| **Only the lead image loads eagerly** | Gallery images lazy-load and decode asynchronously, and only priority images load up front. An image-heavy page stays responsive on a phone. |
-| **One data file describes every photo** | Titles, collections, and alt text live together, and a photo can belong to more than one collection without being duplicated. |
+| **The reveal works for everyone** | Color responds to keyboard focus and a tap, not just a mouse, so the core interaction works on every device. |
+| **Fast on a phone** | Images load as they're needed, so an image-heavy page stays responsive. |
+| **One photo, many collections** | A photograph can live in more than one collection without being duplicated. |
+
+</details>
 
 ## Screens
 
@@ -76,23 +81,18 @@ flowchart TB
 
 ## Technology
 
-| Layer | Technology | Responsibility |
-|---|---|---|
-| App | React, TypeScript, Vite | Single-page site with client routing |
-| Styling | Tailwind CSS | Monochrome editorial layout |
-| Motion | GSAP, Framer Motion, Lenis | Homepage composition, reveals, smooth scroll |
-| Images | sharp, heic-convert (build script) | Converting and resizing originals |
-| Hosting | Vercel | Static deployment |
+| Layer | Technology |
+|---|---|
+| App | React, TypeScript, Vite |
+| Styling | Tailwind CSS |
+| Motion | GSAP, Framer Motion, Lenis |
+| Hosting | Vercel |
 
-## Notes
+---
 
-- **The photographs are mine.** This showcase uses only landscapes and the site's own homepage composition. It doesn't republish the portrait or couples collections.
-- **Measured claims only.** No performance scores are quoted here, because none have been measured and dated for publication.
+<p align="center">
+  <a href="https://photos.davishiggins.com"><img src="assets/btn-open.svg" height="44" alt="View the gallery" /></a>&nbsp;
+  <a href="https://github.com/DavisHiggins"><img src="assets/btn-more.svg" height="44" alt="More of my work" /></a>
+</p>
 
-## About this repository
-
-This is a documentation-only showcase. The site's source and original photo files aren't included here.
-
-**[View the gallery ↗](https://photos.davishiggins.com)** · Photographed and built by [Davis Higgins](https://davishiggins.com) · [More of my work](https://github.com/DavisHiggins)
-
-<sub>© 2026 Davis Higgins. Photographs and screenshots in this repository are shared for portfolio viewing only and may not be reused.</sub>
+<p align="center"><sub>© 2026 Davis Higgins. All rights reserved. Photographs may not be reused.</sub></p>
